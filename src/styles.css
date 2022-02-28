@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+}
+
+body, input, textarea, button {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 18px;
+}

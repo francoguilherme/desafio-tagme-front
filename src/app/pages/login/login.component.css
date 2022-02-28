@@ -1,0 +1,33 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  background: url('../../../assets/images/img-bg-login.jpg') no-repeat center;
+  background-size: cover;
+  height: 100vh;
+  padding: 10px;
+}
+
+.components {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 64px;
+  margin-top: 10%;
+}
+
+.info-box {
+  width: 350px;
+  padding: 10px;
+  border-radius: 5px;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.authentication {
+  max-width: 235px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
