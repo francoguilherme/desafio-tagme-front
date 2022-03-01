@@ -1,6 +1,6 @@
-<div [className]="'wrapper'">
-  <div [className]="'components'">
-    <div [className]="'info-box'">
+<div class="wrapper">
+  <div class="components">
+    <div class="info-box">
       <div style="flex-basis: 40%">
         1
       </div>
@@ -11,10 +11,11 @@
 
     <img width="180" src="./assets/images/logo-coco-bambu.png" alt="Logotipo Coco Bambu">
 
-    <div [className]="'authentication'">
-      <input type="text" placeholder="Nome do usuário">
-      <input type="password" placeholder="Senha">
-      <button>
+    <div class="authentication">
+      <input type="text" placeholder="Nome do usuário" [(ngModel)]="username">
+      <input type="password" placeholder="Senha" [(ngModel)]="password">
+
+      <button (click)="authenticateUser()">
         Acessar
       </button>
     </div>

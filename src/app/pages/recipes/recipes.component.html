@@ -1,0 +1,47 @@
+<div>
+  <section class="header">
+    <img height="33" src="./assets/images/logo-coco-bambu-mini.png" alt="Logotipo Coco Bambu">
+    <div class="options">
+      <input type="text" placeholder="Buscar receita..." [(ngModel)]="searchQuery">
+      <div class="option-item active">
+        <i class="fa-regular fa-rectangle-list"></i>
+        <span>
+        Receitas
+      </span>
+      </div>
+      <div class="option-item">
+        <i class="fa-regular fa-circle-user"></i>
+        <span>
+        Sair
+      </span>
+      </div>
+    </div>
+  </section>
+  <section class="wrapper">
+    <h3>
+      Receitas disponíveis
+    </h3>
+    <div class="divider"></div>
+    <div *ngFor="let recipe of queriedRecipes">
+      <div class="recipe-item">
+        <div class="recipe-item-left">
+          <img width="160" [src]="'./assets/images/' + recipe.image + '-peq.jpg'" [alt]="recipe.name">
+          <div>
+            <h3>{{recipe.name}}</h3>
+            <span>{{recipe.description}}</span>
+          </div>
+        </div>
+        <div class="recipe-item-right">
+          <span>Ver receita</span>
+        </div>
+      </div>
+      <div class="divider"></div>
+    </div>
+    <div style="text-align: center" *ngIf="loading">
+      <h3><i class="fa-solid fa-spinner fa-spin"></i> Carregando...</h3>
+    </div>
+    <div style="text-align: center" *ngIf="!loading && !queriedRecipes.length">
+      <h3>Nenhuma receita encontrada com esse filtro</h3>
+    </div>
+  </section>
+</div>
