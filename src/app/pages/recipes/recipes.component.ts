@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Recipe} from "../../classes/recipe/recipe";
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
+import { Recipe } from "../../classes/recipe/recipe";
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';

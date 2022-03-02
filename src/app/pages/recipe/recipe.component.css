@@ -1,0 +1,91 @@
+.recipe-image {
+  height: 589px;
+  background-size: cover;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.recipe-image-top {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.recipe-image-bottom {
+  padding: 36px;
+  text-shadow: 1px 1px 2px black;
+  background: linear-gradient(to bottom, rgba(0, 0 ,0, 0), rgba(0, 0 ,0, 0.8))
+}
+
+.recipe-image-bottom h2 {
+  margin: 0;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-shadow: 1px 1px 2px black;
+  cursor: pointer;
+}
+
+.preparation-time-box {
+  background: #ffffff;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.preparation-time-box div{
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+}
+
+.ingredients-wrapper {
+  padding: 36px;
+  background: #fafafa;
+}
+
+.ingredients-wrapper h2 {
+  margin: 0 0 36px 0;
+}
+
+.list-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.list-wrapper .list-item {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.list-wrapper .list-item i {
+  cursor: pointer;
+}
+
+.green-icon {
+  color: #66d701;
+  text-shadow: 1px 1px 0 #cccccc;
+}
+
+.white-icon {
+  color: #ffffff;
+  text-shadow: 1px 1px 0 #dddddd;
+}
+
+.steps-wrapper {
+  padding: 36px;
+  background: #ffffff;
+}
+
+.steps-wrapper h2 {
+  margin: 0 0 36px 0;
+}

@@ -31,7 +31,7 @@
             <span>{{recipe.description}}</span>
           </div>
         </div>
-        <div class="recipe-item-right">
+        <div [routerLink]="['/receitas', recipe._id]" class="recipe-item-right">
           <span>Ver receita</span>
         </div>
       </div>

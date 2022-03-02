@@ -1,0 +1,47 @@
+<div>
+  <section [style.background-image]="'url(\'' + './assets/images/' + recipe.image + '-grande.jpg\')'" class="recipe-image">
+    <div class="recipe-image-top">
+      <div class="back-button" routerLink="/receitas">
+        <img width="35" src="./assets/images/icon-back.png" alt="Ícone voltar">
+        <span>Voltar</span>
+      </div>
+      <div class="preparation-time-box">
+        <img width="35" src="./assets/images/icon-time.png" alt="Ícone tempo de preparo">
+        <div>
+          <span>Tempo de preparo</span>
+          <strong>{{recipe.preparationTime}} minutos</strong>
+        </div>
+      </div>
+    </div>
+    <div class="recipe-image-bottom">
+      <h2>{{recipe.name}}</h2>
+      <span>{{recipe.description}}</span>
+    </div>
+  </section>
+  <section class="ingredients-wrapper">
+    <h2>
+      Ingredientes
+    </h2>
+    <div class="list-wrapper">
+      <div class="list-item" *ngFor="let ingredient of recipe.ingredients; let i = index" (click)="setLastIngredient(i)">
+        <i [className]="ingredientsClass(i)"></i>
+        <span>{{ingredient}}</span>
+      </div>
+    </div>
+  </section>
+  <section class="steps-wrapper">
+    <h2>
+      Modo de preparo
+    </h2>
+    <div class="list-wrapper">
+      <div class="list-item" *ngFor="let step of recipe.steps; let i = index" (click)="setLastStep(i)">
+        <i [className]="stepsClass(i)"></i>
+        <div>
+          <strong>Passo {{i+1}}</strong>
+          <br>
+          <span style="white-space: pre-wrap">{{step}}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
