@@ -1,0 +1,16 @@
+<div>
+  <div class="modal">
+    <div style="text-align: right">
+      <img style="cursor: pointer" width="35" src="./assets/images/icon-close.png" alt="Fechar" (click)="triggerClose.emit()">
+    </div>
+    <div class="body">
+      <div class="modal-text">
+        {{text}}
+      </div>
+      <div class="modal-button" (click)="triggerClose.emit()">
+        <strong>{{buttonText}}</strong>
+      </div>
+    </div>
+  </div>
+  <div class="overlay" (click)="triggerClose.emit()"></div>
+</div>

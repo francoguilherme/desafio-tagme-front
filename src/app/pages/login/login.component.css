@@ -24,10 +24,34 @@
   justify-content: space-between;
 }
 
+.info-box-left {
+  flex-basis: 40%;
+  color: #f67a20;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-box-right {
+  flex-basis: 60%;
+  font-style: italic;
+  font-size: 0.9em;
+  padding: 10px 20px 10px 0;
+}
+
 .authentication {
-  max-width: 235px;
-  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 18px;
+}
+
+.login-button {
+  background-color: #f67a20;
+  padding: 10px 20px;
+  border-radius: 1px;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+  text-align: center;
 }

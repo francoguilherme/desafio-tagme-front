@@ -16,7 +16,7 @@
 .recipe-image-bottom {
   padding: 36px;
   text-shadow: 1px 1px 2px black;
-  background: linear-gradient(to bottom, rgba(0, 0 ,0, 0), rgba(0, 0 ,0, 0.8))
+  background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.8))
 }
 
 .recipe-image-bottom h2 {
@@ -48,7 +48,7 @@
 
 .ingredients-wrapper {
   padding: 36px;
-  background: #fafafa;
+  background-color: #fafafa;
 }
 
 .ingredients-wrapper h2 {
@@ -88,4 +88,53 @@
 
 .steps-wrapper h2 {
   margin: 0 0 36px 0;
+}
+
+.footer {
+  height: 76px;
+  background-color: #f1eff0;
+  position: static;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px 0 36px;
+}
+
+.preparation-progress {
+  font-size: 1.1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.preparation-progress .progress-bar {
+  height: 3px;
+  background: linear-gradient(to right, #f67a20 var(--progress), #f67a20 var(--progress), #ffffff var(--progress), #ffffff 100%);
+  width: 80%;
+}
+
+.prepare-button {
+  background-color: #f67a20;
+  padding: 10px 20px;
+  border-radius: 1px;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+  text-align: center;
+  width: 140px;
+}
+
+.finish-button {
+  background-color: #66d701;
+  padding: 10px 20px;
+  border-radius: 1px;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+  text-align: center;
+  width: 140px;
+}
+
+.sticky-bottom {
+  position: sticky;
+  bottom: 0;
 }

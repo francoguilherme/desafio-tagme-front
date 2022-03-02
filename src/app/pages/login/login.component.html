@@ -1,10 +1,11 @@
 <div class="wrapper">
   <div class="components">
     <div class="info-box">
-      <div style="flex-basis: 40%">
-        1
+      <div class="info-box-left">
+        <strong style="font-size: 4em; line-height: 0.7">1</strong>
+        <span style="font-size: 0.9em;">Novo pedido</span>
       </div>
-      <div style="flex-basis: 60%">
+      <div class="info-box-right">
         Por favor, faça o login para ver o pedido e ter acesso a receita com o modo de preparo
       </div>
     </div>
@@ -12,12 +13,23 @@
     <img width="180" src="./assets/images/logo-coco-bambu.png" alt="Logotipo Coco Bambu">
 
     <div class="authentication">
-      <input type="text" placeholder="Nome do usuário" [(ngModel)]="username">
-      <input type="password" placeholder="Senha" [(ngModel)]="password">
+      <div class="input-with-icon">
+        <div>
+          <img height="35" src="./assets/images/icon-login.png" alt="Nome do usuário">
+        </div>
+        <input type="text" placeholder="Nome do usuário" [(ngModel)]="username">
+      </div>
 
-      <button (click)="authenticateUser()">
+      <div class="input-with-icon">
+        <div>
+          <img height="35" src="./assets/images/icon-key.png" alt="Senha">
+        </div>
+        <input type="password" placeholder="Senha" [(ngModel)]="password">
+      </div>
+
+      <div class="login-button" (click)="authenticateUser()">
         Acessar
-      </button>
+      </div>
     </div>
   </div>
 </div>

@@ -23,7 +23,7 @@
       Ingredientes
     </h2>
     <div class="list-wrapper">
-      <div class="list-item" *ngFor="let ingredient of recipe.ingredients; let i = index" (click)="setLastIngredient(i)">
+      <div class="list-item" *ngFor="let ingredient of recipe.ingredients; let i = index" (click)="addIngredient(i)">
         <i [className]="ingredientsClass(i)"></i>
         <span>{{ingredient}}</span>
       </div>
@@ -44,4 +44,21 @@
       </div>
     </div>
   </section>
+  <section [className]="'footer ' + footerClass">
+    <div class="preparation-progress">
+      <span>
+        Status <strong>{{preparationProgress}}%</strong> pronto e {{preparationMinutes}} minuto(s) utilizado(s)
+      </span>
+      <div class="progress-bar" [style]="{'--progress': preparationProgress + '%'}"></div>
+    </div>
+    <div *ngIf="!preparing" class="prepare-button" (click)="startPreparing()">
+      Iniciar preparação
+    </div>
+    <div *ngIf="preparing" class="finish-button" (click)="finishRecipe()">
+      Finalizar
+    </div>
+  </section>
+
+  <app-modal [hidden]="!modalOpen" [text]="modalText" [buttonText]="modalButtonText" (triggerClose)="modalOpen = false">
+  </app-modal>
 </div>

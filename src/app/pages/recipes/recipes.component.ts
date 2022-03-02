@@ -28,8 +28,8 @@ export class RecipesComponent implements OnInit {
       .pipe(catchError(this.handleError))
       .subscribe((data: Object) => {
         this.recipes = JSON.parse(JSON.stringify(data));
+        this.loading = false;
       });
-    this.loading = false;
   }
 
   get queriedRecipes(): Array<Recipe> {
@@ -39,6 +39,7 @@ export class RecipesComponent implements OnInit {
   }
 
   private handleError(error: HttpErrorResponse) {
+    this.loading = false;
     if (error.status === 0) {
       // A client-side or network error occurred. Handle it accordingly.
       console.error('An error occurred:', error.error);

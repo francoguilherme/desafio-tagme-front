@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RecipesComponent } from './pages/recipes/recipes.component';
 import { RecipeComponent } from './pages/recipe/recipe.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RecipesComponent,
-    RecipeComponent
+    RecipeComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

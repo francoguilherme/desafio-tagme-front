@@ -7,3 +7,29 @@ body, input, textarea, button {
   font-family: 'Titillium Web', sans-serif;
   font-size: 18px;
 }
+
+input {
+  height: 43px;
+  border: none;
+  outline: none;
+  border-radius: 0;
+}
+
+input:placeholder-shown {
+  font-style: italic;
+}
+
+.input-with-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-with-icon div {
+  height: 45px;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-left: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
+}

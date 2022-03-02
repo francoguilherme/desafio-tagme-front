@@ -2,18 +2,23 @@
   <section class="header">
     <img height="33" src="./assets/images/logo-coco-bambu-mini.png" alt="Logotipo Coco Bambu">
     <div class="options">
-      <input type="text" placeholder="Buscar receita..." [(ngModel)]="searchQuery">
+      <div class="input-with-icon" style="margin-right: 24px">
+        <div>
+          <img height="35" src="./assets/images/icon-busca.png" alt="Buscar receita">
+        </div>
+        <input type="text" placeholder="Buscar receita..." [(ngModel)]="searchQuery">
+      </div>
       <div class="option-item active">
         <i class="fa-regular fa-rectangle-list"></i>
         <span>
-        Receitas
-      </span>
+          Receitas
+        </span>
       </div>
-      <div class="option-item">
+      <div class="option-item" routerLink="/login">
         <i class="fa-regular fa-circle-user"></i>
         <span>
-        Sair
-      </span>
+          Sair
+        </span>
       </div>
     </div>
   </section>
