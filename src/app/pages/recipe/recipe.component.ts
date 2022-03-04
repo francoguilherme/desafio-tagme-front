@@ -38,10 +38,10 @@ export class RecipeComponent implements OnInit {
       this.recipeId = params['id']
     })
     this.http
-      .get('http://localhost:80/recipe/' + this.recipeId)
+      .get<Recipe>('http://localhost:80/recipe/' + this.recipeId)
       .pipe(catchError(this.handleError))
-      .subscribe((data: Object) => {
-        this.recipe = JSON.parse(JSON.stringify(data));
+      .subscribe((data) => {
+        this.recipe = data;
         this.loading = false;
       });
   }
@@ -52,14 +52,6 @@ export class RecipeComponent implements OnInit {
     } else {
       let found = this.collectedIngredients.findIndex(i => i === index);
       this.collectedIngredients.splice(found, 1);
-    }
-  }
-
-  ingredientsClass(index: number): string {
-    if (this.collectedIngredients.includes(index)) {
-      return 'fa-solid fa-2x fa-circle-check green-icon'
-    } else {
-      return 'fa-solid fa-2x fa-circle white-icon'
     }
   }
 
@@ -82,14 +74,6 @@ export class RecipeComponent implements OnInit {
       this.lastStep = index;
     } else {
       console.log("Complete os outros passos antes")
-    }
-  }
-
-  stepsClass(index: number): string {
-    if (index <= this.lastStep) {
-      return 'fa-solid fa-2x fa-circle-check green-icon'
-    } else {
-      return 'fa-solid fa-2x fa-circle white-icon'
     }
   }
 
@@ -124,7 +108,31 @@ export class RecipeComponent implements OnInit {
     this.modalButtonText = "OK";
     this.modalOpen = true;
     clearTimeout(this.timeout)
-    //TODO Voltar tela ou limpar essa
+    this.clearPreparation();
+  }
+
+  private clearPreparation = (): void => {
+    this.collectedIngredients = [];
+    this.lastStep = -1;
+    this.loading = false;
+    this.preparing = false;
+    this.timer = 0;
+  }
+
+  getIngredientsClass(index: number): string {
+    if (this.collectedIngredients.includes(index)) {
+      return 'fa-solid fa-2x fa-circle-check green-icon'
+    } else {
+      return 'fa-solid fa-2x fa-circle white-icon'
+    }
+  }
+
+  getStepsClass(index: number): string {
+    if (index <= this.lastStep) {
+      return 'fa-solid fa-2x fa-circle-check green-icon'
+    } else {
+      return 'fa-solid fa-2x fa-circle white-icon'
+    }
   }
 
   get footerClass(): string {
@@ -147,7 +155,7 @@ export class RecipeComponent implements OnInit {
     this.sub.unsubscribe();
   }
 
-  private handleError(error: HttpErrorResponse) {
+  private handleError = (error: HttpErrorResponse) => {
     this.loading = false;
     if (error.status === 0) {
       // A client-side or network error occurred. Handle it accordingly.

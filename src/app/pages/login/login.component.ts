@@ -19,10 +19,8 @@ export class LoginComponent implements OnInit {
 
   authenticateUser(): void {
     if (this.username === 'testeusername' && this.password === 'testesenha') {
-      console.log('autenticado')
+      // Credenciais hardcoded
       this.router.navigate(['/receitas'])
-    } else {
-      console.log('acesso negado')
     }
   }
 }

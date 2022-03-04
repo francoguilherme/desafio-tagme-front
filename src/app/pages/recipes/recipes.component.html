@@ -22,11 +22,13 @@
       </div>
     </div>
   </section>
+
   <section class="wrapper">
     <h3>
       Receitas disponíveis
     </h3>
     <div class="divider"></div>
+
     <div *ngFor="let recipe of queriedRecipes">
       <div class="recipe-item">
         <div class="recipe-item-left">
@@ -42,11 +44,15 @@
       </div>
       <div class="divider"></div>
     </div>
+
     <div style="text-align: center" *ngIf="loading">
       <h3><i class="fa-solid fa-spinner fa-spin"></i> Carregando...</h3>
     </div>
-    <div style="text-align: center" *ngIf="!loading && !queriedRecipes.length">
+    <div style="text-align: center" *ngIf="!error && !loading && !queriedRecipes.length">
       <h3>Nenhuma receita encontrada com esse filtro</h3>
+    </div>
+    <div style="text-align: center" *ngIf="error">
+      <h3>Houve algum erro ao carregar as receitas</h3>
     </div>
   </section>
 </div>

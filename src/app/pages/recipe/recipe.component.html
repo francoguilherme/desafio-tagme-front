@@ -18,24 +18,26 @@
       <span>{{recipe.description}}</span>
     </div>
   </section>
+
   <section class="ingredients-wrapper">
     <h2>
       Ingredientes
     </h2>
     <div class="list-wrapper">
       <div class="list-item" *ngFor="let ingredient of recipe.ingredients; let i = index" (click)="addIngredient(i)">
-        <i [className]="ingredientsClass(i)"></i>
+        <i [className]="getIngredientsClass(i)"></i>
         <span>{{ingredient}}</span>
       </div>
     </div>
   </section>
+
   <section class="steps-wrapper">
     <h2>
       Modo de preparo
     </h2>
     <div class="list-wrapper">
       <div class="list-item" *ngFor="let step of recipe.steps; let i = index" (click)="setLastStep(i)">
-        <i [className]="stepsClass(i)"></i>
+        <i [className]="getStepsClass(i)"></i>
         <div>
           <strong>Passo {{i+1}}</strong>
           <br>
@@ -44,6 +46,7 @@
       </div>
     </div>
   </section>
+
   <section [className]="'footer ' + footerClass">
     <div class="preparation-progress">
       <span>
@@ -59,6 +62,10 @@
     </div>
   </section>
 
-  <app-modal [hidden]="!modalOpen" [text]="modalText" [buttonText]="modalButtonText" (triggerClose)="modalOpen = false">
+  <app-modal
+    [hidden]="!modalOpen"
+    [text]="modalText"
+    [buttonText]="modalButtonText"
+    (triggerClose)="modalOpen = false">
   </app-modal>
 </div>
